@@ -21,8 +21,6 @@ export default async (req, res) => {
       });
 
       console.log(event.data.object);
-      // event.data.object contains all the session created information.
-      // store what you need in the database.
     }
     res.status(200).json({ event });
   } catch (error) {

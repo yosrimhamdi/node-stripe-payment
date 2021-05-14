@@ -1,4 +1,5 @@
 import stripe from '../stripe';
+import Purchase from '../models/Purchase';
 
 export default async (req, res) => {
   try {
@@ -11,8 +12,16 @@ export default async (req, res) => {
     console.log(event.type.blue.bold);
 
     if (event.type === 'checkout.session.completed') {
+      const { metadata, amount_total } = event.data.object;
+
+      await Purchase.create({
+        user: metadata.userId,
+        tour: metadata.tourId,
+        price: amount_total / 100,
+      });
+
       console.log(event.data.object);
-      // evnet.data.object contains all the session created information.
+      // event.data.object contains all the session created information.
       // store what you need in the database.
     }
     res.status(200).json({ event });

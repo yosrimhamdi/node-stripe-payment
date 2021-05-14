@@ -17,7 +17,7 @@ export default async (req, res) => {
               name: 'Stubborn Attachments',
               images: ['https://i.imgur.com/EHyR2nP.png'],
             },
-            unit_amount: 2 * 100,
+            unit_amount: 150 * 100,
           },
           quantity: 1,
           description: 'here is the product description',

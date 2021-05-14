@@ -6,8 +6,10 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Document
   body 
+    h1 buy now only with 150$
+    button(data-amount='150') 150$ 
     h1 buy now only with 500$
-    button click to buy 
+    button(data-amount='500') 500$ 
     
   script(src='https://js.stripe.com/v3/') 
   script(src='/payment.js')

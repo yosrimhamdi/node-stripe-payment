@@ -7,7 +7,7 @@ import webhook from '../controllers/webhook';
 const router = Router();
 
 router.post('/webhook', webhook);
-router.post('/session', session);
+router.post('/session/:amount', session);
 router.get('/success', success);
 router.get('/failed', failed);
 

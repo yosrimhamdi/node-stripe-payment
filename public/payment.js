@@ -4,7 +4,7 @@ const stripe = window.Stripe(
 
 document.querySelector('button').addEventListener('click', async () => {
   try {
-    let response = await fetch('http://localhost:3000/payment/session', {
+    let response = await fetch('/payment/session', {
       method: 'POST',
     });
 

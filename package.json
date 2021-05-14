@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --quiet --es-module-specifier-resolution=node -r dotenv/config server.js",
-    "heroku": "node server.js"
+    "heroku": "node --es-module-specifier-resolution=node server.js"
   },
   "keywords": [],
   "author": "",

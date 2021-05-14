@@ -10,6 +10,6 @@ mongoose.connect('mongodb://localhost/test', {
 });
 
 app.listen(3000, () => {
-  // console.clear();
+  console.clear();
   console.log('server running on localhost:3000'.green);
 });

@@ -2,8 +2,10 @@ import app from './app';
 import mongoose from 'mongoose';
 import 'colors';
 
+const { PORT, DB_URI } = process.env;
+
 mongoose
-  .connect(process.env.DB_URI, {
+  .connect(DB_URI, {
     useNewUrlParser: true,
     useFindAndModify: true,
     useCreateIndex: true,
@@ -12,7 +14,7 @@ mongoose
   .then(() => console.log('connected to database'.green.italic))
   .catch(console.error);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.clear();
-  console.log('server running on localhost:3000'.green.italic);
+  console.log(`server running on port ${PORT}`.green.italic);
 });

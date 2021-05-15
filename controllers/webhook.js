@@ -9,8 +9,6 @@ export default async (req, res) => {
       process.env.STRIPE_WEBHOOK_SECRET,
     );
 
-    console.log(event.type.blue.bold);
-
     if (event.type === 'checkout.session.completed') {
       const { metadata, amount_total } = event.data.object;
 
@@ -19,11 +17,9 @@ export default async (req, res) => {
         tour: metadata.tourId,
         price: amount_total / 100,
       });
-
-      console.log(event.data.object);
     }
-    res.status(200).json({ event });
+    res.send();
   } catch (error) {
-    res.status(404).json({ error });
+    res.status(404).send();
   }
 };

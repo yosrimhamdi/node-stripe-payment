@@ -3,15 +3,20 @@ const stripe = window.Stripe(
 );
 
 const pay = async e => {
-  let response = await fetch(`/payment/session/${e.target.dataset.amount}`, {
-    method: 'POST',
-  });
+  let response = await fetch(
+    `/payment/session/${e.target.parentNode.dataset.amount}`,
+    {
+      method: 'POST',
+    },
+  );
 
   response = await response.json();
 
   stripe.redirectToCheckout({ sessionId: response.session.id });
+
+  console.log(e.target.parentNode);
 };
 
-const btns = document.querySelectorAll('button');
+const btns = document.querySelectorAll('.img-cap');
 
 btns.forEach(btn => btn.addEventListener('click', pay));

@@ -1,15 +1,446 @@
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
-  body 
-    h1 buy now only with 150$
-    button(data-amount='150') 150$ 
-    h1 buy now only with 500$
-    button(data-amount='500') 500$ 
-    
-  script(src='https://js.stripe.com/v3/') 
-  script(src='/payment.js')
+head
+  meta(charset='utf-8')
+  meta(http-equiv='x-ua-compatible' content='ie=edge')
+  title Watch shop | eCommers
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='manifest' href='/site.webmanifest')
+  link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
+  link(rel='stylesheet' href='assets/css/a.css')
+  link(rel='stylesheet' href='assets/css/A.style.css.pagespeed.cf.pq55RbNP0z.css')
+#preloader-active
+  .preloader.d-flex.align-items-center.justify-content-center
+    .preloader-inner.position-relative
+      .preloader-circle
+      .preloader-img.pere-text
+        img(src='data:image/webp;base64,UklGRhACAABXRUJQVlA4TAQCAAAvg8AFEPcgEEhC2V90hfkfEIEAYcF/pAQJMJoGDmDZth0lug+xiQ0S1ABCzvznaRKwsP4j+j8B+o0DvLXlqy1strMw+v/oteil/0ghlr21uXtt5w0Udh/+z6XNbK+0M6u2NAFB2zttKwCzfsC9tvN22gg8fsG2B2DQP/cAYvtzzpVZfZF0qc3qS+Z2MrPDdY0ZeKnQB2AKRc83zK9M1wPjY52r2VHS3nY6WdLJWdIlnKVPywLwVmEgPfmPN5MCyT4RSPffqS6Wrq6WvUtylj8t8RHwBYH83Cbik6yXFMj3X7HdvpHOZlbVN+lqZhepMbPDXXJm1iwYgKC8B8ZWegFDgnl6SI8IQfLA2EoB8N/RZ21W3SXpYHaWTmYHSXI7s2PZA5hVOMCgzyfQJmIrSX2ih1GSwgzDV1ziaHbSp0tUZo2ak5lVTuUz8CiJ0CY0wjMR9PlKRPDyPRCDvnLLXYrMdpeDmR0uWhiAQaUwKx0gJLoimJ8jMD6VX6nJXRd8ukZLfYTYfssv+AxepX+pMqudVhyAl4ojtKkRnitEmIIW/qWT2UErPoC3ygfoEx3QrtDDqO00Zna4S5f6VjSzNKgDhlZ6RRi0ggfGVnpO3RbkLFs1BYEV1JOf2zUUyEa/BbmMnXM+rqI+M3mtopDhtQk1zsx27q78m3X06IEpKLmCfADm0Eo=' alt='')
+header
+  .header-area
+    .main-header.header-sticky
+      .container-fluid
+        .menu-wrapper
+          .logo
+            a(href='index.html')
+              img(src='data:image/webp;base64,UklGRhACAABXRUJQVlA4TAQCAAAvg8AFEPcgEEhC2V90hfkfEIEAYcF/pAQJMJoGDmDZth0lug+xiQ0S1ABCzvznaRKwsP4j+j8B+o0DvLXlqy1strMw+v/oteil/0ghlr21uXtt5w0Udh/+z6XNbK+0M6u2NAFB2zttKwCzfsC9tvN22gg8fsG2B2DQP/cAYvtzzpVZfZF0qc3qS+Z2MrPDdY0ZeKnQB2AKRc83zK9M1wPjY52r2VHS3nY6WdLJWdIlnKVPywLwVmEgPfmPN5MCyT4RSPffqS6Wrq6WvUtylj8t8RHwBYH83Cbik6yXFMj3X7HdvpHOZlbVN+lqZhepMbPDXXJm1iwYgKC8B8ZWegFDgnl6SI8IQfLA2EoB8N/RZ21W3SXpYHaWTmYHSXI7s2PZA5hVOMCgzyfQJmIrSX2ih1GSwgzDV1ziaHbSp0tUZo2ak5lVTuUz8CiJ0CY0wjMR9PlKRPDyPRCDvnLLXYrMdpeDmR0uWhiAQaUwKx0gJLoimJ8jMD6VX6nJXRd8ukZLfYTYfssv+AxepX+pMqudVhyAl4ojtKkRnitEmIIW/qWT2UErPoC3ygfoEx3QrtDDqO00Zna4S5f6VjSzNKgDhlZ6RRi0ggfGVnpO3RbkLFs1BYEV1JOf2zUUyEa/BbmMnXM+rqI+M3mtopDhtQk1zsx27q78m3X06IEpKLmCfADm0Eo=' alt='')
+          .main-menu.d-none.d-lg-block
+            nav
+              ul#navigation
+                li
+                  a(href='index.html') Home
+                li
+                  a(href='shop.html') shop
+                li
+                  a(href='about.html') about
+                li.hot
+                  a(href='#') Latest
+                  ul.submenu
+                    li
+                      a(href='shop.html')  Product list
+                    li
+                      a(href='product_details.html')  Product Details
+                li
+                  a(href='blog.html') Blog
+                  ul.submenu
+                    li
+                      a(href='blog.html') Blog
+                    li
+                      a(href='blog-details.html') Blog Details
+                li
+                  a(href='#') Pages
+                  ul.submenu
+                    li
+                      a(href='login.html') Login
+                    li
+                      a(href='cart.html') Cart
+                    li
+                      a(href='elements.html') Element
+                    li
+                      a(href='confirmation.html') Confirmation
+                    li
+                      a(href='checkout.html') Product Checkout
+                li
+                  a(href='contact.html') Contact
+          .header-right
+            ul
+              li
+                .nav-search.search-switch
+                  span.flaticon-search
+              li
+                a(href='login.html')
+                  span.flaticon-user
+              li
+                a(href='cart.html')
+                  span.flaticon-shopping-cart
+        .col-12
+          .mobile_menu.d-block.d-lg-none
+main
+  .slider-area
+    .slider-active
+      .single-slider.slider-height.d-flex.align-items-center.slide-bg
+        .container
+          .row.justify-content-between.align-items-center
+            .col-xl-8.col-lg-8.col-md-8.col-sm-8
+              .hero__caption
+                h1(data-animation='fadeInLeft' data-delay='.4s' data-duration='2000ms')
+                  | Select Your New Perfect Style
+                p(data-animation='fadeInLeft' data-delay='.7s' data-duration='2000ms')
+                  | Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  | laboris nisi ut aliquip ex ea commodo consequat is aute
+                  | irure.
+                .hero__btn(data-animation='fadeInLeft' data-delay='.8s' data-duration='2000ms')
+                  a.btn.hero-btn(href='industries.html') Shop Now
+            .col-xl-3.col-lg-3.col-md-4.col-sm-4.d-none.d-sm-block
+              .hero__img(data-animation='bounceIn' data-delay='.4s')
+                img.heartbeat(src='assets/img/hero/xwatch.png.pagespeed.ic.LlRtijfV2T.webp' alt='')
+      .single-slider.slider-height.d-flex.align-items-center.slide-bg
+        .container
+          .row.justify-content-between.align-items-center
+            .col-xl-8.col-lg-8.col-md-8.col-sm-8
+              .hero__caption
+                h1(data-animation='fadeInLeft' data-delay='.4s' data-duration='2000ms')
+                  | Select Your New Perfect Style
+                p(data-animation='fadeInLeft' data-delay='.7s' data-duration='2000ms')
+                  | Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  | laboris nisi ut aliquip ex ea commodo consequat is aute
+                  | irure.
+                .hero__btn(data-animation='fadeInLeft' data-delay='.8s' data-duration='2000ms')
+                  a.btn.hero-btn(href='industries.html') Shop Now
+            .col-xl-3.col-lg-3.col-md-4.col-sm-4.d-none.d-sm-block
+              .hero__img(data-animation='bounceIn' data-delay='.4s')
+                img.heartbeat(src='assets/img/hero/xwatch.png.pagespeed.ic.LlRtijfV2T.webp' alt='')
+  section.new-product-area.section-padding30
+    .container
+      .row
+        .col-xl-12
+          .section-tittle.mb-70
+            h2 New Arrivals
+      .row
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-new-pro.mb-30.text-center
+            .product-img
+              img(src='assets/img/gallery/xnew_product1.png.pagespeed.ic.GC30TWVUh9.webp' alt='')
+            .product-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-new-pro.mb-30.text-center
+            .product-img
+              img(src='assets/img/gallery/xnew_product2.png.pagespeed.ic.TisB6MUmE3.webp' alt='')
+            .product-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-new-pro.mb-30.text-center
+            .product-img
+              img(src='assets/img/gallery/xnew_product3.png.pagespeed.ic.xG1joZNkeV.webp' alt='')
+            .product-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+  .gallery-area
+    .container-fluid.p-0.fix
+      .row
+        .col-xl-6.col-lg-4.col-md-6.col-sm-6
+          .single-gallery.mb-30
+            .gallery-img.big-img(style='\
+            background-image: url(assets/img/gallery/xgallery1.png.pagespeed.ic.RiMoEHAQJU.webp);\
+            ')
+        .col-xl-3.col-lg-4.col-md-6.col-sm-6
+          .single-gallery.mb-30
+            .gallery-img.big-img(style='\
+            background-image: url(assets/img/gallery/xgallery2.png.pagespeed.ic.R67GzIjQgh.webp);\
+            ')
+        .col-xl-3.col-lg-4.col-md-12
+          .row
+            .col-xl-12.col-lg-12.col-md-6.col-sm-6
+              .single-gallery.mb-30
+                .gallery-img.small-img(style='\
+                background-image: url(assets/img/gallery/xgallery3.png.pagespeed.ic.38W7JPYvku.webp);\
+                ')
+            .col-xl-12.col-lg-12.col-md-6.col-sm-6
+              .single-gallery.mb-30
+                .gallery-img.small-img(style='\
+                background-image: url(assets/img/gallery/xgallery4.png.pagespeed.ic.eeH-radW60.webp);\
+                ')
+  .popular-items.section-padding30
+    .container
+      .row.justify-content-center
+        .col-xl-7.col-lg-8.col-md-10
+          .section-tittle.mb-70.text-center
+            h2 Popular Items
+            p
+              | Consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              | ut labore et dolore magna aliqua. Quis ipsum suspendisse
+              | ultrices gravida.
+      .row
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-popular-items.mb-50.text-center
+            .popular-img
+              img(src='assets/img/gallery/xpopular1.png.pagespeed.ic.V6f1NFO7gC.webp' alt='')
+              .img-cap(data-amount='45.743')
+                span Buy Now
+              .favorit-items
+                span.flaticon-heart
+            .popular-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-popular-items.mb-50.text-center
+            .popular-img
+              img(src='assets/img/gallery/xpopular2.png.pagespeed.ic.tyRElexSbg.webp' alt='')
+              .img-cap(data-amount='45.743')
+                span Buy Now
+              .favorit-items
+                span.flaticon-heart
+            .popular-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-popular-items.mb-50.text-center
+            .popular-img
+              img(src='assets/img/gallery/xpopular3.png.pagespeed.ic.hSa1p1jqty.webp' alt='')
+              .img-cap(data-amount='45.743')
+                span Buy Now
+              .favorit-items
+                span.flaticon-heart
+            .popular-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-popular-items.mb-50.text-center
+            .popular-img
+              img(src='assets/img/gallery/xpopular4.png.pagespeed.ic.-4ClcOF8fv.webp' alt='')
+              .img-cap(data-amount='45.743')
+                span Buy Now
+              .favorit-items
+                span.flaticon-heart
+            .popular-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-popular-items.mb-50.text-center
+            .popular-img
+              img(src='assets/img/gallery/xpopular5.png.pagespeed.ic.ak-jzjbDc8.webp' alt='')
+              .img-cap(data-amount='45.743')
+                span Buy Now
+              .favorit-items
+                span.flaticon-heart
+            .popular-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+        .col-xl-4.col-lg-4.col-md-6.col-sm-6
+          .single-popular-items.mb-50.text-center
+            .popular-img
+              img(src='assets/img/gallery/xpopular6.png.pagespeed.ic.Q3zrxHTInj.webp' alt='')
+              .img-cap(data-amount='45.743')
+                span Buy Now
+              .favorit-items
+                span.flaticon-heart
+            .popular-caption
+              h3
+                a(href='product_details.html') Thermo Ball Etip Gloves
+              span $ 45,743
+      .row.justify-content-center
+        .room-btn.pt-70
+          a.btn.view-btn1(href='catagori.html') View More Products
+  .video-area
+    .container-fluid
+      .row.align-items-center
+        .col-lg-12
+          .video-wrap
+            .play-btn
+              a.popup-video(href='https://www.youtube.com/watch?v=KMc6DyEJp04')
+                i.fas.fa-play
+      .thumb-content-box
+        .thumb-content
+          h3 Next Video
+          a(href='#')
+            i.flaticon-arrow
+  .watch-area.section-padding30
+    .container
+      .row.align-items-center.justify-content-between.padding-130
+        .col-lg-5.col-md-6
+          .watch-details.mb-40
+            h2 Watch of Choice
+            p
+              | Enim ad minim veniam, quis nostrud exercitation ullamco
+              | laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              | irure dolor in reprehenderit in voluptate velit esse.
+            a.btn(href='shop.html') Show Watches
+        .col-lg-6.col-md-6.col-sm-10
+          .choice-watch-img.mb-40
+            img(src='assets/img/gallery/xchoce_watch1.png.pagespeed.ic.JqdVtLwPVf.webp' alt='')
+      .row.align-items-center.justify-content-between
+        .col-lg-6.col-md-6.col-sm-10
+          .choice-watch-img.mb-40
+            img(src='assets/img/gallery/xchoce_watch2.png.pagespeed.ic.GaOMVE1NLY.webp' alt='')
+        .col-lg-5.col-md-6
+          .watch-details.mb-40
+            h2 Watch of Choice
+            p
+              | Enim ad minim veniam, quis nostrud exercitation ullamco
+              | laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              | irure dolor in reprehenderit in voluptate velit esse.
+            a.btn(href='shop.html') Show Watches
+  .shop-method-area
+    .container
+      .method-wrapper
+        .row.d-flex.justify-content-between
+          .col-xl-4.col-lg-4.col-md-6
+            .single-method.mb-40
+              i.ti-package
+              h6 Free Shipping Method
+              p
+                | aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.
+          .col-xl-4.col-lg-4.col-md-6
+            .single-method.mb-40
+              i.ti-unlock
+              h6 Secure Payment System
+              p
+                | aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.
+          .col-xl-4.col-lg-4.col-md-6
+            .single-method.mb-40
+              i.ti-reload
+              h6 Secure Payment System
+              p
+                | aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.
+footer
+  .footer-area.footer-padding
+    .container
+      .row.d-flex.justify-content-between
+        .col-xl-3.col-lg-3.col-md-5.col-sm-6
+          .single-footer-caption.mb-50
+            .single-footer-caption.mb-30
+              .footer-logo
+                a(href='index.html')
+                  img(src='assets/img/logo/xlogo2_footer.png.pagespeed.ic.WC60eOreUW.webp' alt='')
+              .footer-tittle
+                .footer-pera
+                  p
+                    | Asorem ipsum adipolor sdit amet, consectetur adipisicing
+                    | elitcf sed do eiusmod tem.
+        .col-xl-2.col-lg-3.col-md-3.col-sm-5
+          .single-footer-caption.mb-50
+            .footer-tittle
+              h4 Quick Links
+              ul
+                li
+                  a(href='#') About
+                li
+                  a(href='#')  Offers &amp; Discounts
+                li
+                  a(href='#')  Get Coupon
+                li
+                  a(href='#')  Contact Us
+        .col-xl-3.col-lg-3.col-md-4.col-sm-7
+          .single-footer-caption.mb-50
+            .footer-tittle
+              h4 New Products
+              ul
+                li
+                  a(href='#') Woman Cloth
+                li
+                  a(href='#') Fashion Accessories
+                li
+                  a(href='#')  Man Accessories
+                li
+                  a(href='#')  Rubber made Toys
+        .col-xl-3.col-lg-3.col-md-5.col-sm-7
+          .single-footer-caption.mb-50
+            .footer-tittle
+              h4 Support
+              ul
+                li
+                  a(href='#') Frequently Asked Questions
+                li
+                  a(href='#') Terms &amp; Conditions
+                li
+                  a(href='#') Privacy Policy
+                li
+                  a(href='#') Report a Payment Issue
+      .row.align-items-center
+        .col-xl-7.col-lg-8.col-md-7
+          .footer-copy-right
+            p
+              | Copyright &copy;
+              script.
+                document.write(new Date().getFullYear());
+              |                   All rights reserved
+        .col-xl-5.col-lg-4.col-md-5
+          .footer-copy-right.f-right
+            .footer-social
+              a(href='#')
+                i.fab.fa-twitter
+              a(href='https://www.facebook.com/sai4ull')
+                i.fab.fa-facebook-f
+              a(href='#')
+                i.fab.fa-behance
+              a(href='#')
+                i.fas.fa-globe
+.search-model-box
+  .h-100.d-flex.align-items-center.justify-content-center
+    .search-close-btn +
+    form.search-model-form
+      input#search-input(type='text' placeholder='Searching key.....')
+script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
+script(src='./assets/js/vendor/jquery-1.12.4.min.js')
+script(src='assets/js/popper.min.js+bootstrap.min.js+jquery.slicknav.min.js.pagespeed.jc.zrnatLu9Rq.js')
+script.
+  eval(mod_pagespeed_8XvX1POCNb);
+script.
+  eval(mod_pagespeed_kXO2E4dy8z);
+script.
+  eval(mod_pagespeed_Sd_KFwdmO1);
+script(src='assets/js/owl.carousel.min.js+slick.min.js+wow.min.js+animated.headline.js.pagespeed.jc.X4gIWYMYpg.js')
+script.
+  eval(mod_pagespeed_N5TP4Si$Km);
+script.
+  eval(mod_pagespeed_oJKzjwmvfM);
+script.
+  eval(mod_pagespeed_jz8SqYmeJS);
+script.
+  eval(mod_pagespeed_mxAeZXiKbo);
+script(src='assets/js/jquery.magnific-popup.js+jquery.scrollUp.min.js+jquery.nice-select.min.js+jquery.sticky.js+contact.js+jquery.form.js.pagespeed.jc.LqcBOQ_8ho.js')
+script.
+  eval(mod_pagespeed_g2GAzaUxjY);
+script.
+  eval(mod_pagespeed_xuLOn2iElt);
+script.
+  eval(mod_pagespeed_N6bHp4zs7J);
+script.
+  eval(mod_pagespeed_ij5YVdXwPx);
+script.
+  eval(mod_pagespeed_aJKQ_YSEYl);
+script.
+  eval(mod_pagespeed_ZFtOrrowue);
+script(src='assets/js/jquery.validate.min.js+mail-script.js+jquery.ajaxchimp.min.js+plugins.js+main.js.pagespeed.jc.aoiGgW9qYP.js')
+script.
+  eval(mod_pagespeed_fPWP9CjyiB);
+script.
+  eval(mod_pagespeed_k3Ax3BEFUg);
+script.
+  eval(mod_pagespeed_N9KXf0fmqt);
+script.
+  eval(mod_pagespeed_K7UqwxaWUN);
+script.
+  eval(mod_pagespeed_F95M9nW0_A);
+script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-23581568-13')
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+  dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'UA-23581568-13');
+script(defer='' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"rayId":"65e3f862ddda41eb","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}')
+script(src='https://js.stripe.com/v3/') 
+script(src='/payment.js')
+

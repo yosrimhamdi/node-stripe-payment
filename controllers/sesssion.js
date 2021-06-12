@@ -3,6 +3,8 @@ import stripe from '../stripe';
 export default async (req, res) => {
   const { domain, params } = req;
 
+  console.log(params.amount * 100);
+
   try {
     const session = await stripe.checkout.sessions.create({
       success_url: `${domain}/payment/success`,
@@ -15,9 +17,11 @@ export default async (req, res) => {
             currency: 'usd',
             product_data: {
               name: 'Stubborn Attachments',
-              images: ['https://i.imgur.com/EHyR2nP.png'],
+              images: [
+                `${domain}/assets/img/gallery/xpopular1.png.pagespeed.ic.V6f1NFO7gC.webp`,
+              ],
             },
-            unit_amount: params.amount * 100,
+            unit_amount: Math.round(params.amount * 100),
           },
           quantity: 1,
           description: 'here is the product description',
@@ -32,6 +36,7 @@ export default async (req, res) => {
 
     res.json({ session });
   } catch (e) {
+    console.log(e);
     res.status(400).json({ e });
   }
 };

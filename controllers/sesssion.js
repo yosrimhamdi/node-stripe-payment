@@ -7,8 +7,8 @@ export default async (req, res) => {
 
   try {
     const session = await stripe.checkout.sessions.create({
-      success_url: `${domain}/payment/success`,
-      cancel_url: `${domain}/payment/failed`,
+      success_url: `${domain}/`,
+      cancel_url: `${domain}/`,
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: [
